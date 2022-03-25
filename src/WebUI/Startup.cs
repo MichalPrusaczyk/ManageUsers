@@ -2,14 +2,14 @@ using CleanArchitecture.Application;
 using CleanArchitecture.Application.Common.Interfaces;
 using CleanArchitecture.Infrastructure;
 using CleanArchitecture.Infrastructure.Persistence;
-using CleanArchitecture.WebUI.Filters;
-using CleanArchitecture.WebUI.Services;
+using CleanArchitectureWebUI.Filters;
+using CleanArchitectureWebUI.Services;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using NSwag;
 using NSwag.Generation.Processors.Security;
 
-namespace CleanArchitecture.WebUI;
+namespace CleanArchitectureWebUI;
 
 public class Startup
 {

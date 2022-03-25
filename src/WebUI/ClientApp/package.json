@@ -6,13 +6,13 @@
     "start": "echo 'Starting...' && ng serve",
     "start:dev": "echo 'Starting (Dev)...' && ng serve --host 0.0.0.0 --disable-host-check",
     "build": "ng build",
-    "build:ssr": "ng build && ng run CleanArchitecture.WebUI:server",
+    "build:ssr": "ng build && ng run CleanArchitectureWebUI:server",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev:ssr": "ng run CleanArchitecture.WebUI:serve-ssr",
+    "dev:ssr": "ng run CleanArchitectureWebUI:serve-ssr",
     "serve:ssr": "node dist-server/main.js",
-    "prerender": "ng run CleanArchitecture.WebUI:prerender"
+    "prerender": "ng run CleanArchitectureWebUI:prerender"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +29,7 @@
     "@fortawesome/fontawesome-svg-core": "1.2.30",
     "@fortawesome/free-solid-svg-icons": "5.14.0",
     "@nguniversal/express-engine": "^13.1.0",
+    "@nguniversal/module-map-ngfactory-loader": "^8.2.6",
     "aspnet-prerendering": "^3.0.1",
     "bootstrap": "^4.3.1",
     "core-js": "^2.6.5",

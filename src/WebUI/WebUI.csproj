@@ -2,8 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <RootNamespace>CleanArchitecture.WebUI</RootNamespace>
-        <AssemblyName>CleanArchitecture.WebUI</AssemblyName>
+        <RootNamespace>CleanArchitectureWebUI</RootNamespace>
+        <AssemblyName>CleanArchitectureWebUI</AssemblyName>
         <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
         <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
         <IsPackable>true</IsPackable>
@@ -13,7 +13,7 @@
         <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
 
         <!-- Set this to true if you enable server-side prerendering -->
-        <BuildServerSideRenderer>false</BuildServerSideRenderer>
+        <BuildServerSideRenderer>true</BuildServerSideRenderer>
         <UserSecretsId>efad71c6-743c-4b87-9de8-f26d77146f6d</UserSecretsId>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
         <DockerfileContext>..\..</DockerfileContext>

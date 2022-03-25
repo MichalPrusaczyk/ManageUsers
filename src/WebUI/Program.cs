@@ -3,7 +3,7 @@ using CleanArchitecture.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace CleanArchitecture.WebUI;
+namespace CleanArchitectureWebUI;
 
 public class Program
 {
