@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "name": "angularrun",
+  "private": true,
+  "scripts": {
+    "ng": "cd ClientApp && npm ng",
+    "start": "cd ClientApp && npm start",
+    "start:dev": "cd ClientApp && npm start:dev",
+    "build": "cd ClientApp && npm build",
+    "build:ssr": "cd ClientApp && npm build:ssr",
+    "test": "cd ClientApp && npm test",
+    "lint": "cd ClientApp && npm lint",
+    "e2e": "cd ClientApp && npm e2ee"
+  }
+}
