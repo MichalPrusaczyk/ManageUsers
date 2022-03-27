@@ -1,0 +1,95 @@
+@import "../1-abstracts/_themeGen";
+@import "../1-abstracts/_mixins.scss";
+@import "../8-icons/_icons.scss";
+@import "_sidebar-sub.scss";
+
+.sidebar {
+    .FullScreenMode &__nav{
+        display: none !important;
+    }
+
+    &__nav__icon, &__sub__icon, &__sub__sub__icon {
+        @include icon(32px, 32px);
+    }
+
+    @include themeGen() {
+        &__nav {
+            @media screen and (max-width: $mobile-width-medium), screen and (max-height: $mobile-height-medium) {
+                left: -56px;
+            }
+
+            display: flex;
+            left: 0px;
+            position: fixed;
+            top: 50px;
+            bottom: 0;
+            z-index: 10000;
+
+            &__list {
+                box-shadow: 0px 0px 4px #0c0c0cd1;
+                max-height: 100%;
+                overflow-y: auto;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+
+            &__list,
+            &__expand {
+                display: flex;
+                flex-direction: column;
+                padding: 10px 5px;
+                margin: auto;
+                background: getThemeVal('background');
+                border-radius: 0 $card-border-radius $card-border-radius 0;
+                list-style: none;
+            }
+
+            &__expand {
+                font-size: $h6;
+                box-shadow: 1px 1px 1px #0c0c0cd1;
+                margin-right: 5px;
+                z-index: 1;
+            }
+
+            &__item {
+                display: flex;
+
+                & > a {
+                    @include items();
+                    padding: 2px;
+                }
+            }
+
+            &__item:hover > a {
+                background: getThemeVal('hover');
+                color: #e4e4e4;
+            }
+
+            &__name {
+                width: 0px;
+                padding: 0px;
+                transition: all ease-in-out 0.25s;
+
+                &.expanded {
+                    padding: 5px;
+                    width: 200px;
+
+                    @media screen and (max-width: $mobile-width-medium), screen and (max-height: $mobile-height-medium) {
+                        transform: translate(56px);
+                        width: 256px;
+                    }
+                }
+            }
+        }
+
+        &__sub {
+            @include sidebar-sub();
+
+            &__sub {
+                @include sidebar-sub();
+            }
+        }
+    }
+}

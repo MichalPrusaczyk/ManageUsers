@@ -1,0 +1,35 @@
+﻿@import "../../../../Content/global_styles/Sass/1-abstracts/_themeGen";
+@import "../../../../Content/global_styles/Sass/1-abstracts/_variables.scss";
+
+#wrapper {
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    bottom: 0px;
+    padding-left: 70px;
+    /*padding-right: 70px;*/
+    padding-bottom: 0;
+    /*transition: $transition;*/
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .FullScreenMode & {
+        top: 0;
+        padding: 0;
+    }
+
+    @media print {
+        & {
+            top: 0 !important;
+        }
+    }
+
+    @include themeGen() {
+        /*background-color: getThemeVal("bodyBackground");*/
+        background: getThemeVal("wrapper");
+    }
+
+    @media screen and (max-width: $mobile-width-medium), screen and (max-height: $mobile-height-medium) {
+        padding-left: 0 !important;
+    }
+}

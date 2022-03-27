@@ -1,0 +1,39 @@
+@import "../1-abstracts/_calculations.scss";
+@import "../1-abstracts/_variables.scss";
+@import "../1-abstracts/_themeGen";
+@import "../3-components/_card.scss";
+
+a {
+    @include themeGen() {
+        color: getThemeVal("fontPrimary");
+    }
+}
+
+body {
+    @include themeGenInside() {
+        height: 100%;
+        padding-top: 50px;
+        padding-bottom: 20px;
+        color: getThemeVal("fontDefault");
+        background-color: getThemeVal("bodyBackground");
+        -webkit-print-color-adjust: exact;
+    }
+}
+
+.page {
+    &__content {
+        &--wrapper {
+            //padding-left: 0;
+            //margin: 0 auto;
+            //width: 90%;
+            //@media screen and (max-width: $mobile-width-medium) {
+            //height: auto !important;
+            //}
+            overflow: auto;
+            height: 100%;
+            //display: flex;
+            //justify-content: center;
+            //overflow-x: auto;
+        }
+    }
+}

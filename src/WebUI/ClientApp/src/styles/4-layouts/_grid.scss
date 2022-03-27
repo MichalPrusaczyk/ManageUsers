@@ -1,0 +1,341 @@
+﻿@use "sass:color";
+@import "../1-abstracts/_themeGen";
+@import "../1-abstracts/_variables.scss";
+@import "../3-components/_container.scss";
+
+@mixin gridBodyStyle {
+    font-size: 0.875rem !important;
+    overflow-wrap: break-word;
+    text-align: center;
+    border-radius: $jsgrid-border-radius;
+    overflow: hidden;
+
+    &:focus-visible {
+        outline: none;
+    }
+}
+
+@mixin gridCellStyle {
+    padding: 0.16em !important;
+
+    @include themeGen() {
+        color: getThemeVal('gridFont');
+        border: none !important;
+        border-bottom: 1px solid getThemeVal('gridBorder') !important;
+
+        &:not(:last-child) {
+            border-right: 1px solid getThemeVal('gridBorder') !important;
+        }
+    }
+}
+
+@mixin gridTBodyStyle {
+    @include themeGen() {
+        background: getThemeVal('gridTable') !important;
+    }
+
+    overflow-y: scroll;
+    border: none !important;
+}
+
+@mixin gridSelectedRowStyle {
+    @include themeGen() {
+        background-color: getThemeVal('gridSelected') !important;
+    }
+}
+
+@mixin gridHeaderStyle {
+    @include themeGen() {
+        background: getThemeVal('gridHeader') !important;
+        border: none !important;
+        border-bottom: 1px solid getThemeVal('gridBorderHeader') !important;
+    }
+
+    &:not(:last-child) {
+        @include themeGen() {
+            border-right: 1px solid getThemeVal('gridBorderHeader') !important;
+        }
+    }
+}
+
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    gap: $gap_medium;
+
+    &__header {
+        /*overflow-x: auto;*/
+    }
+
+    .jsgrid {
+        height: 100% !important;
+    }
+}
+
+.grid--autoheight {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    gap: $gap_medium;
+}
+
+.grid {
+    &__container {
+        @include container(flex-start);
+        height: 100%;
+        width: 100%;
+
+        &__body {
+            @media screen and (max-width: 640px) {
+                flex-direction: row;
+            }
+        }
+    }
+}
+
+// *** TABLE ***
+.jsgrid-table {
+    @include themeGen() {
+        color: getThemeVal('fontDefault') !important;
+        background-color: getThemeVal('gridTable') !important;
+    }
+}
+
+.jsgrid-filter-row > .jsgrid-cell {
+    @include themeGen() {
+        background: getThemeVal('gridFilter') !important;
+    }
+}
+
+.jsgrid-insert-row > .jsgrid-cell {
+    @include themeGen() {
+        background: getThemeVal('gridInsert') !important;
+    }
+}
+
+// *** JSGRID-CHANGE ***
+.jsgrid {
+    @include gridBodyStyle();
+}
+
+.jsgrid-grid-body {
+    @include gridTBodyStyle();
+}
+
+.jsgrid-grid-header {
+    background: none !important;
+    overflow-y: scroll !important;
+    border: none !important;
+}
+
+.jsgrid-cell {
+    @include gridCellStyle();
+}
+/*
+.jsgrid-grid-body tr:last-child .jsgrid-cell {
+    border-bottom: none !important;
+}*/
+
+.jsgrid-header-row > .jsgrid-header-cell {
+    @include gridHeaderStyle();
+}
+
+.oee-browse .jsgrid-header-row {
+    @include themeGen() {
+        border-left: 4px solid getThemeVal('gridHeader') !important;
+    }
+}
+#PrdSchedule .highlight td,.jsgrid-selected-row > .jsgrid-cell {
+    @include gridSelectedRowStyle();
+}
+
+.jsgrid-edit-row > .jsgrid-cell {
+    @include themeGen() {
+        background: getThemeVal('gridClicked') !important;
+    }
+}
+
+.jsgrid-nodata-row > .jsgrid-cell {
+    background: transparent !important;
+}
+
+.jsgrid-header-scrollbar {
+    @include themeGen() {
+        background-color: getThemeVal('gridHeader') !important;
+    }
+}
+
+// *** PAGER ***
+.jsgrid-pager {
+    user-select: none;
+    padding: 1em !important;
+
+    &-container {
+        @include themeGen() {
+            background: getThemeVal('gridHeader') !important;
+            padding-left: 5px;
+        }
+    }
+
+    &-page {
+        @include themeGen() {
+            background: getThemeVal('gridTable') !important;
+            border-radius: $jsgrid-pager-radius;
+            color: getThemeVal('gridFont') !important;
+
+            &:hover {
+                background: color.adjust(getThemeVal('gridTable'), $blackness: 5%) !important;
+            }
+        }
+
+        &.jsgrid-pager-current-page {
+            @include themeGen() {
+                background: getThemeVal('gridCurrentPage') !important;
+                border: none !important;
+            }
+        }
+    }
+
+    &-nav {
+        &-inactive-button {
+            display: unset !important;
+            opacity: 0.6;
+        }
+
+        &-button {
+            @include themeGen() {
+                background: getThemeVal('buttonInfo') !important;
+                border-radius: $jsgrid-pager-radius;
+
+                &:hover {
+                    background: color.adjust(getThemeVal('buttonInfo'), $blackness: 25%) !important;
+                }
+            }
+        }
+    }
+
+    &-page, &-nav-button {
+        padding: 6px;
+        margin: 0px 3px;
+        min-width: 17px !important;
+    }
+}
+
+// *** BUTTON-IMAGES ***
+
+.jsgrid {
+    & .jsgrid-button {
+        background-color: #ffffff00 !important;
+        background-size: contain !important;
+        /*background-image: url("/Content/images/gridButtons.svg") !important;*/
+        margin-right: 0.5rem;
+    }
+
+    &-edit-button {
+        @include themeGen() {
+            background-image: url("/Content/images/button-edit.svg") !important;
+            background-position: 0 !important;
+            filter: getThemeVal('filter');
+        }
+    }
+
+    &-cancel-edit-button {
+        background-image: url("/Content/images/button-cancel.svg") !important;
+        background-position: 0 !important;
+    }
+
+    &-delete-button {
+        background-image: url("/Content/images/button-delete.svg") !important;
+        background-position: 0 !important;
+    }
+
+    &-clear-filter-button {
+        background-image: url("/Content/images/button-clearfilter.svg") !important;
+        background-position: 0 !important;
+    }
+
+    &-search-button {
+        background-image: url("/Content/images/button-filter.svg") !important;
+        background-position: 0 !important;
+    }
+
+    &-insert-mode-button {
+        background-image: url("/Content/images/button-add.svg") !important;
+        background-position: 0 !important;
+    }
+
+    &-insert-button {
+        background-image: url("/Content/images/button-add.svg") !important;
+        background-position: 0 !important;
+    }
+
+    &-search-mode-button {
+        background-image: url("/Content/images/button-search.svg") !important;
+        background-position: 0 !important;
+    }
+
+    &-excel-button {
+        background-image: url("/Content/images/excelIcon.png") !important;
+        background-position: 0 !important;
+        background-size: 20px !important;
+    }
+
+    &-update-button {
+        background-image: url("/Content/images/button-update.svg") !important;
+        background-position: 0 !important;
+        background-size: 20px !important;
+    }
+}
+
+// *** grid-mvc ***
+.grid {
+    &-mvc {
+        @include gridBodyStyle();
+
+        tbody {
+            @include gridTBodyStyle();
+        }
+
+        table {
+            margin-bottom: unset !important;
+        }
+    }
+
+    &-row:hover {
+        @include gridSelectedRowStyle();
+        .grid-cell{
+            @include gridHeaderStyle();
+        }
+    }
+
+    &-cell {
+        @include gridCellStyle();
+    }
+
+    &-wrap {
+    }
+
+    &-header {
+        @include gridHeaderStyle();
+    }
+
+    &-footer {
+    }
+}
+
+// *** STOCK ***
+.stockInfoHeader {
+    text-align: center;
+    font-weight: bold;
+    color: #eafcff;
+    background: #256868;
+    border-top-left-radius: $jsgrid-border-radius;
+    border-top-right-radius: $jsgrid-border-radius;
+    padding-bottom: $jsgrid-border-radius;
+    transform: translateY($jsgrid-border-radius);
+}
+

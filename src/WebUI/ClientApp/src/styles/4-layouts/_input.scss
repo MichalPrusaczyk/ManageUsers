@@ -1,0 +1,47 @@
+﻿@use "sass:color";
+@import "../3-components/_inputStyle.scss";
+@import "../1-abstracts/_themeGen";
+
+textarea {
+    @include inputStyle();
+    @include overrideAutofill();
+    height: auto;
+}
+
+select, input {
+    @include inputStyle();
+    @include overrideAutofill();
+    height: 25px;
+    display: unset !important;
+    margin: 3px 0 !important;
+}
+
+input[type="checkbox"] {
+    height: 17px;
+}
+
+div .btn {
+    margin: 3px 0 !important;
+}
+
+.custom-file-label {
+    @include themeGen() {
+        background-color: getThemeVal('formControlBackground');
+        background-clip: padding-box;
+        border: 1px solid getThemeVal('formControlBorder');
+        color: getThemeVal('fontDefault');
+
+        &::after {
+            content: "Przeglądaj";
+            border: transparent;
+            background-color: color.adjust(getThemeVal('formControlBackground'), $blackness: 5%);
+            color: getThemeVal('fontDefault');
+        }
+
+        &:hover::after {
+            background-color: color.adjust(getThemeVal('formControlBackground'), $blackness: 10%);
+            color: getThemeVal('fontDefault');
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+@use "sass:color";
+@import "../1-abstracts/_themeGen";
+@import "../1-abstracts/_mixins.scss";
+@import "../8-icons/_icons.scss";
+
+@mixin sidebar-sub {
+    position: fixed;
+    width: 300px;
+    background-color: getThemeVal('background');
+    overflow: unset;
+    border-radius: 0 $card-border-radius $card-border-radius 0;
+    box-shadow: 4px 0px 4px #0c0c0cd1;
+    z-index: 2;
+
+    &__title {
+        /*background-color: getThemeVal('fontPrimary');*/
+        color: getThemeVal('fontDefault');
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 0 0 10px;
+        font-weight: 600;
+        height: 40px;
+        user-select: none;
+        border-radius: $card-border-radius;
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        padding-bottom: 5px;
+        padding-right: 15px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+
+        & > a {
+            @include items();
+            color: getThemeVal('fontPrimary') !important;
+            margin: 5px;
+        }
+    }
+
+    &__item:hover > a {
+        box-shadow: inset 0px 0px 5px 2px color.adjust(getThemeVal('itemBackground'), $alpha: -0.25);
+        background: getThemeVal('hover');
+        color: getThemeVal('fontDefault') !important;
+    }
+
+    &__name {
+        width: 100%;
+        margin-left: 5px;
+    }
+}

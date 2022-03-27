@@ -1,0 +1,67 @@
+﻿@import "../1-abstracts/_variables.scss";
+@import "../1-abstracts/_themeGen";
+@import "../3-components/_inputStyle.scss";
+
+.form {
+    &--control {
+        @include inputStyle();
+    }
+
+    &--control {
+
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: $form-control_container_height;
+
+            &--title {
+                font-size: $form-control_title-size;
+                padding-left: 2px;
+            }
+
+            &--content {
+            }
+
+            &--multiple__items {
+                display: flex;
+                flex-direction: column;
+                gap: $form-control_container_multiple_items_gap;
+            }
+
+            &--group {
+                display: flex;
+                flex-direction: column;
+
+                &--title {
+                    font-size: $form-control_title-size;
+                    padding-left: 1px;
+                }
+
+                &--multiple__items {
+                    display: flex;
+                    flex-direction: column;
+                    gap: $form-control_container_multiple_items_gap;
+                }
+            }
+        }
+
+        &__group {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            &--title {
+                font-size: $form-control_title-size;
+                padding-left: 1px;
+            }
+
+            &--content {
+                display: flex;
+                flex-direction: row;
+                gap: $form-control_container_multiple_items_gap;
+            }
+        }
+    }
+}

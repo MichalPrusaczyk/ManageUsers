@@ -1,0 +1,128 @@
+@import "../1-abstracts/_themeGen.scss";
+@import "../1-abstracts/_variables.scss";
+@import "../1-abstracts/_mixins.scss";
+
+.FullScreenMode nav.nav {
+    display: none !important;
+}
+
+nav .nav {
+
+    @include themeGen() {
+        @media screen and (max-width: $mobile-width-small), screen and (max-width: $mobile-width-medium) {
+            &__list__element {
+                &__logo,
+                &__buttons #swichScreenMode,
+                &__buttons__title .moduleDescr,
+                &__support {
+                    display: none;
+                }
+            }
+
+            #login span:first-child {
+                display: none;
+            }
+        }
+
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        &__list {
+            display: flex;
+            width: 100%;
+            height: $nav-height;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            align-items: center;
+            align-content: center;
+            z-index: 999;
+            justify-content: space-between;
+            background: getThemeVal('background');
+
+            &__element {
+                &__logo {
+                    &__image {
+                        margin-left: 10px;
+                        width: 250px;
+                        height: $nav-logo-height;
+                        background-repeat: no-repeat !important;
+                    }
+                }
+
+                &__buttons {
+                    display: flex;
+                    flex-direction: row;
+                    margin-inline: auto;
+
+                    &__item {
+                        @include items();
+                        overflow-wrap: break-word;
+                        width: auto;
+                        font-size: $h5;
+                        font-weight: $font-weight-m;
+                    }
+
+                    &__item:hover {
+                        background-color: getThemeVal('fontPrimary');
+                        color: getThemeVal('nav_itemColorHover') !important;
+                    }
+                }
+
+                &__support {
+                    display: none;
+                }
+
+                &__menu {
+                    display: flex;
+                    align-content: center;
+                    align-items: center;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+}
+
+.status-circle {
+    display: flex;
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat !important;
+    margin: 10px;
+}
+
+.status-star {
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    transform: translate(15px,15px);
+}
+
+.status-days {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.currentPageName {
+    @include themeGen() {
+        @include items();
+        font-weight: bold;
+        display: inline;
+        white-space: nowrap;
+    }
+}
+
+.moduleDescr {
+    /*font-size: 10px;*/
+    /*font-weight: 400;
+    color: #0eeeb9;*/
+}

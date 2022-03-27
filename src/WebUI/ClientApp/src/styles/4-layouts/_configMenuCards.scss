@@ -1,0 +1,24 @@
+﻿@import "../3-components/_card.scss";
+@import "../3-components/_container.scss";
+
+.config {
+    &__container {
+        @include container(flex-start);
+
+        &__body {
+            align-content: unset;
+            overflow-x: auto;
+
+            &__content {
+                flex-wrap: nowrap;
+                overflow: unset;
+            }
+        }
+    }
+
+    &__card {
+        @include card(100px, 100px, 0px);
+        @include cardHover();
+        @include cardIcon();
+    }
+}

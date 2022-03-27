@@ -1,0 +1,56 @@
+﻿@import "_form-control.scss";
+@import "../1-abstracts/_themeGen";
+@import "../1-abstracts/_variables.scss";
+@import "../3-components/_container.scss";
+
+.form {
+    &__container {
+        @include container(center);
+        height: 100%;
+        width: 100%;
+
+        @include themeGen() {
+            &__body {
+                height: auto !important;
+                padding: 10px;
+                color: getThemeVal('formBodyColor');
+                background: getThemeVal('background');
+                border-radius: $card-border-radius;
+            }
+        }
+    }
+}
+
+.form-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $form-area_gap;
+    
+    @include themeGen() {
+        color: getThemeVal('formBodyColor');
+        background: getThemeVal('background') !important;
+    }
+
+    border-radius: $card-border-radius;
+    padding: 10px;
+}
+
+
+.formArea {
+    @include themeGen() {
+        color: getThemeVal('formBodyColor');
+        background: getThemeVal('background') !important;
+    }
+
+    border-radius: $card-border-radius;
+    padding: 10px;
+}
+
+.formArea .control-label {
+    @include themeGen() {
+        color: getThemeVal('formBodyColor');
+    }
+
+    padding-left: 4px;
+    font-size: 12px;
+}

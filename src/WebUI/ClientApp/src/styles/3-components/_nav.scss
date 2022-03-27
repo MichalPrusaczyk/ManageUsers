@@ -1,0 +1,29 @@
+﻿@import "../1-abstracts/_themeGen";
+
+.nav {
+    &-tabs &-item.show &-link, &-tabs &-link.active {
+        @include themeGen() {
+            background-color: getThemeVal('nav_background') !important;
+            border-color: getThemeVal('nav_border') !important;
+            border-bottom: 1px solid getThemeVal('tab_background') !important;
+        }
+    }
+
+    &-link {
+        &:hover, &:focus {
+            @include themeGen() {
+                border-color: getThemeVal('nav_border') !important;
+            }
+        }
+    }
+}
+
+    .tab {
+        @include themeGen() {
+            &-content {
+                margin-top: -1px;
+                background-color: getThemeVal('tab_background') !important;
+                border: 1px solid getThemeVal('nav_border') !important;
+            }
+        }
+    }

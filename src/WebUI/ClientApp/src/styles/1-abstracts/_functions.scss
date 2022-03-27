@@ -1,0 +1,7 @@
+@use "sass:color";
+
+$threshold: 55%;
+
+@function contrastColor($color, $dark, $light) {
+    @return if(lightness($color) < $threshold, $light, $dark)
+}

@@ -1,0 +1,17 @@
+@import '../../styles/styles.scss';
+@import "../../styles/1-abstracts/_themeGen";
+@import '../../styles/4-layouts/navbar.scss';
+// :root {
+//     --url: url('../../assets/'+getThemeVal('switchTheme'));
+//   }
+
+
+.nav__list__element__buttons__item{
+    
+        height: 10px;
+        width: 40px !important;
+        background-size: cover;
+        @include themeGen() {
+        background-image: url(getThemeVal('switchTheme')); 
+    }
+}

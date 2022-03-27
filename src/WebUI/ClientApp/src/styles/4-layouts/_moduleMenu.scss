@@ -1,0 +1,39 @@
+﻿@import "../1-abstracts/_variables.scss";
+@import "../3-components/_card.scss";
+@import "../3-components/_container.scss";
+@import "../8-icons/_icons.scss";
+
+
+.moduleMenu {
+
+    &__container {
+        @include container(flex-start);
+
+        &__body {
+            flex-wrap: nowrap !important;
+            gap: $gap_large;
+
+            &__content {
+                gap: $gap_large;
+                overflow: unset !important;
+            }
+        }
+
+        justify-content: center !important;
+        gap: $gap_large;
+    }
+
+    &__card {
+        @include card(180px, 180px, 150px);
+        @include cardHover();
+
+        &__icon {
+            @include icon(180px, 150px, 0.7);
+        }
+
+        &:hover &__icon__container {
+            transform: scale(0.8);
+            overflow: hidden;
+        }
+    }
+}

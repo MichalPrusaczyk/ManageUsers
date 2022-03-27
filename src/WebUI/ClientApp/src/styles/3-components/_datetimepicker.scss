@@ -1,0 +1,116 @@
+﻿@use "sass:color";
+@import "../1-abstracts/_themeGen";
+@import "../1-abstracts/_variables.scss";
+@import "../3-components/_inputStyle.scss";
+
+/*.xdsoft_datetimepicker .xdsoft_calendar td{
+    border: 1px solid red !important;
+}*/
+
+.xdsoft {
+    @include themeGen() {
+        &_datetimepicker {
+            /*display: block !important;*/
+            background: getThemeVal('background') !important;
+            border-color: transparent;
+            border-radius: $card-border-radius !important;
+            box-shadow: 2px 2px 4px getThemeVal('itemBackground') !important;
+            transition: background 0.25s ease-in-out;
+
+            .xdsoft {
+                &_calendar {
+
+                    thead, tbody{
+                        tr {
+                            th {
+                                background: getThemeVal('gridHeader') !important;
+                                color: getThemeVal('fontDefault') !important;
+                                border: 1px solid getThemeVal('background') !important;
+                            }
+                        }
+                    }
+                }
+
+                th, .xdsoft_other_month {
+                    background: getThemeVal('gridTable') !important;
+                    border: none !important;
+                }
+
+                &_date {
+                    background-color: getThemeVal('formControlBackground') !important;
+                    border: 1px solid getThemeVal('background') !important;
+                    color: getThemeVal('fontDefault') !important;
+
+                    &:hover {
+                        background-color: color.adjust(getThemeVal('formControlBackground'), $blackness: 10%) !important;
+                    }
+                }
+
+                &_current {
+                    box-shadow: inset 0px 0px 5px 1px #0c0c0cd1 !important;
+                    background: getThemeVal('hoverSelected') !important;
+                    color: getThemeVal('gridFont') !important;
+                }
+            }
+        }
+
+        &_other_month {
+            // style do innego miesiaca niz aktualny
+        }
+
+
+        &_select {
+            /*display: block !important;*/
+        }
+
+        &_time {
+            background: getThemeVal('formControlBackground') !important;
+            border: transparent !important;
+            box-shadow: 2px 2px 4px getThemeVal('itemBackground') !important;
+            color: getThemeVal('fontDefault') !important;
+
+            &_box {
+                border: getThemeVal('formControlBackground') !important
+            }
+
+            &:hover {
+                background-color: color.adjust(getThemeVal('background'), $blackness: 15%) !important;
+                color: getThemeVal('fontDefault') !important;
+            }
+        }
+
+        &_label {
+            background-color: unset !important;
+            color: getThemeVal('fontDefault') !important;
+
+            & > .xdsoft {
+                &_select {
+                    box-shadow: 2px 2px 4px getThemeVal('itemBackground') !important;
+                    border: none !important;
+                    border-radius: $card-border-radius !important;
+                    background: getThemeVal('background') !important;
+                }
+            }
+        }
+
+        &_option {
+            background-color: getThemeVal('formControlBackground') !important;
+
+            &:hover {
+                background-color: color.adjust(getThemeVal('background'), $blackness: 15%) !important;
+                color: getThemeVal('fontDefault') !important;
+            }
+        }
+
+
+        &_scroller {
+            background-color: getThemeVal('scrollbarThumb') !important;
+            border-radius: $scrollbar-border-radius !important;
+            background-clip: content-box !important;
+
+            &:hover {
+                background-color: color.adjust(getThemeVal('scrollbarThumb'), $blackness: 25%) !important;
+            }
+        }
+    }
+}

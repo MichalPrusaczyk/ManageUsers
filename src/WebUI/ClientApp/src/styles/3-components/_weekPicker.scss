@@ -1,0 +1,31 @@
+﻿@import "../1-abstracts/_themeGen";
+
+#weekPickerWraper {
+    display: flex;
+    flex-direction: row;
+    height: 35px !important;
+    padding: 5px !important;
+
+    @include themeGen() {
+        background-color: getThemeVal('formControlBackground') !important;
+        background-clip: padding-box;
+        border: 1px solid getThemeVal('formControlBorder');
+    }
+}
+
+#weekPicker, #weekPickerDisplay{
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    margin: 0 !important;
+}
+
+.weekpickerArrow {
+    display: flex !important;
+    height: 100% !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    font-size: 28px !important;
+    float: unset !important;
+}

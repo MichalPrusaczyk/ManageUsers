@@ -1,0 +1,7 @@
+﻿@import "../1-abstracts/_themeGen";
+
+.progress {
+    @include themeGen() {
+        background: getThemeVal('formControlBackgroundDisabled') !important;
+    }
+}

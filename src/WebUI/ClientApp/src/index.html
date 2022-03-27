@@ -2,13 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>CleanArchitecture</title>
+    <title>UserManager</title>
     <base href="/" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
-  <body>
-    <app-root>Loading...</app-root>
+  <body class="">
+    <div id="wrapper">
+      <div class="page__content--wrapper" style="padding: 15px;">
+        <app-home></app-home> 
+        <app-dashboard></app-dashboard>
+      </div>
+    </div>
+    <!-- <app-root>Loading...</app-root> -->
   </body>
 </html>
+
+<!-- <script>
+  var body = document.querySelector("body");
+  window.onload = function(){
+   setInterval(function(){
+       body.childElementCount.classList.add("theme-dark");
+   }, 10000);
+};
+</script> -->

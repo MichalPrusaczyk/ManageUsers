@@ -1,0 +1,33 @@
+﻿@import "../1-abstracts/_themeGen";
+
+.dropdown {
+    @include themeGen() {
+        &-menu {
+            background: getThemeVal('background') !important;
+            color: getThemeVal('fontDefault') !important;
+        }
+
+        &-item {
+            color: getThemeVal('fontDefault') !important;
+
+            &:hover {
+                color: getThemeVal('dropdown_itemHoverColor') !important;
+                background: getThemeVal('dropdown_itemHoverBackground') !important;
+            }
+
+            &.selected, &.active {
+                color: getThemeVal('dropdown_itemHoverColor') !important;
+                background: getThemeVal('dropdown_itemActiveBackground') !important;
+
+                &:hover {
+                    color: getThemeVal('dropdown_itemHoverColor') !important;
+                    background: getThemeVal('dropdown_itemHoverBackground') !important;
+                }
+            }
+        }
+
+        &_head {
+            user-select: none;
+        }
+    }
+}

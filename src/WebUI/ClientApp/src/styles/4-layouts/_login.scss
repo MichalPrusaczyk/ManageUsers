@@ -1,0 +1,56 @@
+@import "../1-abstracts/_calculations.scss";
+@import "../1-abstracts/_themeGen";
+@import "../1-abstracts/_mixins.scss";
+@import "../1-abstracts/_variables.scss";
+@import "../3-components/_card.scss";
+@import "../3-components/_container.scss";
+
+
+.account-wall {
+    .tab-content {
+        margin-top: unset !important;
+        background-color: unset !important; 
+        border: none !important;
+    }
+}
+
+.login {
+    margin-right: 0.75rem;
+
+    &__container {
+        @include container(center);
+    }
+
+    &__card {
+        @include card(150px, 150px, 266px);
+    }
+
+    &__card {
+        @include themeGen() {
+            &__nav {
+                @include items();
+                overflow-wrap: break-word;
+                width: auto;
+                font-size: $h5;
+                font-weight: 500;
+            }
+
+            &__nav:hover {
+                background-color: getThemeVal('fontPrimary');
+                color: getThemeVal('nav_itemColorHover');
+            }
+
+            &__info {
+                position: fixed !important;
+                top: 40px;
+                right: 0;
+                display: flex;
+                align-content: center;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+        }
+    }
+}

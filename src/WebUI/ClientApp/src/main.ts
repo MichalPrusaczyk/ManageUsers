@@ -2,6 +2,7 @@ import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 import { environment } from './environments/environment';
 
 export function getBaseUrl() {
@@ -17,4 +18,7 @@ if (environment.production) {
 }
 
 platformBrowserDynamic(providers).bootstrapModule(AppModule)
+  .catch(err => console.log(err));
+
+platformBrowserDynamic(providers).bootstrapModule(DashboardModule)
   .catch(err => console.log(err));

@@ -1,0 +1,40 @@
+﻿@import "../6-skins/_themes.scss";
+
+$scopedTheme: null;
+@mixin themeGen($allThemesMap: $themes){
+    @each $themeName, $themeMap in $allThemesMap {
+        .theme-#{$themeName} & {
+
+            $scopedTheme: () !global;
+            @each $variableName, $variableValue in $themeMap {
+                $scopedTheme: map-merge($scopedTheme, ($variableName: $variableValue)) !global;
+            }
+
+            @content;
+
+            $scopedTheme: null !global;
+        }
+    }
+}
+
+@mixin themeGenInside($allThemesMap: $themes) {
+    @each $themeName, $themeMap in $allThemesMap {
+        &.theme-#{$themeName} {
+
+            $scopedTheme: () !global;
+
+            @each $variableName, $variableValue in $themeMap {
+                $scopedTheme: map-merge($scopedTheme, ($variableName: $variableValue)) !global;
+            }
+
+            @content;
+
+            $scopedTheme: null !global;
+        }
+    }
+}
+
+
+@function getThemeVal($themeVar){
+    @return map-get($scopedTheme, $themeVar);
+}

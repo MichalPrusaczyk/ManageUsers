@@ -1,0 +1,25 @@
+﻿@import "../1-abstracts/_themeGen";
+@import "../1-abstracts/_variables.scss";
+
+@mixin icon($icon-width, $icon-height, $icon-scale: 1) {
+
+    @include themeGen() {
+        &__container {
+            width: $icon-width;
+            height: $icon-height;
+            transform: scale($icon-scale);
+            transition: all $transition;
+        }
+
+        &__content {
+            // display: flex;
+            // align-content: center;
+            // justify-content: center;
+            // align-items: center;
+            --primaryColor: #{getThemeVal('iconPrimary')};
+            --secondaryColor: #{getThemeVal('iconSecondary')};
+            --accentColor: #{getThemeVal('iconAccent')};
+            stroke: getThemeVal('iconStroke');
+        }
+    }
+}

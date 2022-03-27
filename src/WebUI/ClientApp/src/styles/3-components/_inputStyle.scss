@@ -1,0 +1,66 @@
+﻿@use "sass:color";
+@import "../1-abstracts/_themeGen";
+@import "../1-abstracts/_functions.scss";
+
+@mixin inputStyle() {
+
+    @include themeGen() {
+        display: block;
+        width: 100%;
+        height: 35px;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: getThemeVal('fontDefault');
+        background-color: getThemeVal('formControlBackground');
+        background-clip: padding-box;
+        border: 1px solid getThemeVal('formControlBorder');
+        /*border: transparent;*/
+
+        border-radius: .25rem;
+        transition: box-shadow .25s ease-in-out;
+        outline: none !important;
+
+        &::placeholder {
+            user-select: none;
+        }
+
+        &:not(:disabled):not(.disabled):not([readonly="true"]):not([type="checkbox"]) {
+            &:hover {
+                box-shadow: 0px 0 14px -7px getThemeVal('formControlBoxShadow');
+                /*outline: 1px solid #2e585e;*/
+            }
+
+            &:focus {
+                box-shadow: 0px 0 7px 0px getThemeVal('formControlBoxShadow');
+                /*outline: 2px solid #2e585e;*/
+            }
+        }
+
+        &:not([type="checkbox"]){
+        &:disabled, &.disabled, &[readonly="true"] {
+            &::placeholder {
+                color: transparent;
+            }
+
+            $disabledInputColor: color.adjust(getThemeVal('formControlBackground'), $saturation: 10%);
+            border: 1px solid transparent;
+            background-color: $disabledInputColor;
+            opacity: 0.5;
+            cursor: not-allowed;
+            box-shadow: inset 1px 1px 2px #10242c;
+        }
+        }
+    }
+}
+
+@mixin overrideAutofill {
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus {
+        @include themeGen() {
+            -webkit-box-shadow: 0 0 0px 1000px getThemeVal('formControlBackground') inset !important;
+            -webkit-text-fill-color: getThemeVal('fontDefault') !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+    }
+}

@@ -1,0 +1,69 @@
+@import "../../styles/3-components/_container.scss";
+@import "../../styles/1-abstracts/_themeGen";
+@import "../../styles/1-abstracts/_variables.scss";
+
+
+@mixin support-form() {
+    &__title {
+        font-size: $support-form_title-font-size;
+        margin-bottom: $support-form_title-margin-bottom;
+    }
+
+    
+}
+
+.support-form {
+    &__container {
+        @include container(normal);
+        height: 100%;
+
+        @include themeGen() {
+            &__body {
+                padding: 10px;
+                background: getThemeVal('background');
+                border-radius: $card-border-radius;
+            }
+        }
+
+        &__data {
+            @include support-form();
+            margin-right: $support-form_container-margin;
+        }
+
+        &__role {
+            max-width: 900px;
+            @include support-form();
+            margin-right: $support-form_container-margin;
+        }
+
+        &__manage {
+            @include support-form();
+
+            &__content {
+                display: flex;
+                flex-direction: column;
+                gap: $support-form_role_container-margin-bottom;
+            }
+        }
+    }
+
+    &__roles {
+        &__container {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__role {
+        &__container {
+            margin-right: $support-form_role_container-margin-right;
+            margin-bottom: $support-form_role_container-margin-bottom;
+
+            &__title {
+                font-size: $form-control_title-size;
+                margin-bottom: $support-form_title-margin-bottom;
+            } 
+        }
+    }
+}

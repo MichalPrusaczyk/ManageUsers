@@ -1,0 +1,54 @@
+﻿@import "../1-abstracts/_themeGen";
+
+.ui {
+    &-widget {
+        &-overlay {
+            z-index: 10000 !important;
+            background: rgba(0, 0, 0, 0.7) !important;
+            opacity: unset !important;
+            backdrop-filter: blur(2px) !important;
+        }
+
+        &-content {
+            border: unset !important; 
+            background: unset !important; 
+            color: unset !important;
+        }
+    }
+
+    &-dialog {
+        @include themeGen() {
+            background-color: getThemeVal('popupWindow_bgColor') !important;
+            border: 1px solid getThemeVal('popupWindow_brdColor') !important;
+            max-width: 92% !important;
+            -webkit-box-shadow: 2px 2px 9px 0px getThemeVal('popupWindow_boxShadow') !important;
+            -moz-box-shadow: 2px 2px 9px 0px getThemeVal('popupWindow_boxShadow') !important;
+            box-shadow: 2px 2px 9px 0px getThemeVal('popupWindow_boxShadow') !important;
+        }
+
+        &-titlebar {
+            @include themeGen() {
+                border: unset !important;
+                background: unset !important;
+                font-size: 16px;
+                font-weight: bold;
+                padding: 10px;
+                overflow: hidden;
+                max-height: 43px;
+                color: getThemeVal('popupWindow_titleFontColor') !important;
+                background-color: getThemeVal('popupWindow_titleBgColor') !important;
+                border-bottom: 1px solid getThemeVal('popupWindow_brdColor') !important;
+            }
+        }
+
+        &-content {
+            @include themeGen() {
+                color: getThemeVal('fontDefault');
+            }
+        }
+    }
+
+    &-icon {
+        background-image: url('../../../../_ClientAppJS/ExternalLibraries/jQuery/images/ui-icons_cc0000_256x240.png') !important;
+    }
+}

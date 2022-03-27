@@ -4,6 +4,12 @@
     "baseUrl": "./",
     "module": "es2020",
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "icons": [
+        "dist/icons/icons",
+        "dist/icons"
+      ]
+    },
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",

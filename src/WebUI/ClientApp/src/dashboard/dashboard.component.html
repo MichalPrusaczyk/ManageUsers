@@ -1,1 +1,29 @@
-<p>dashboard works!</p>
+<!-- NAVIGATION -->
+<app-nav-menu></app-nav-menu>
+
+<!-- PAGE CONTENT -->
+        <div class="dashboard__container">
+            <div class="dashboard__container__body">
+                <div class="dashboard__container__body__content">
+                    <div class="cards__container">
+                        <div class="cards__container__body">
+
+                            <div class="cards__container__body__content">
+                                <a class="cards__card" routerLink="dashboard" routerLinkActive="active">
+                                    <div class="cards__card__icon__container">
+                                        <svg-icon class="cards__card__icon__content" name="iLConfig"></svg-icon>
+                                    </div>
+                                    <div class="cards__card__box__title--small text-truncate">Dashboard</div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+
+
+
+        <app-home></app-home>

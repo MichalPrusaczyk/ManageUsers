@@ -1,0 +1,278 @@
+$themes: (
+    // LIGHT
+    'light': (
+        // BODY
+        bodyBackground: #d2d2d2,
+        background: #e4e4e4,
+        backgroundShadow: #bebebeed,
+        backgroundHover: #bebebe,
+        backgroundActive: #1a1a1a,
+        titleBoxBackground: #bebebe,
+        titleBoxBackgroundDisabled: #c4c4c4,
+        wrapper: linear-gradient(to bottom,rgba(0,0,0,0) 0%,hsl(0deg 0% 0% / 18%) 100%),
+        titleBoxColor: #1a1a1a,
+
+        // FONTS
+        fontDefault: #1a1a1a,
+        fontPrimary: #1a1a1a,
+        fontSecondary: #33C1B1,
+        fontThird: #e03434,
+        fontBlue: #01617e,
+        fontGreen: #015600,
+        fontDark: #939393,
+        fontPink: #92034a,
+        fontLightOrange: #753906,
+
+        // BUTTONS
+        buttonFont: #1a1a1a,
+        buttonPrimary: hsl(212deg 60% 50%),
+        buttonSecondary: hsl(212deg 10% 50%),
+        buttonInfo: hsl(0deg 0% 75%),
+        buttonDark: hsl(212deg 10% 20%),
+        buttonLight: #fff,
+        buttonWarning: hsl(35deg 60% 50%),
+        buttonDanger: hsl(0deg 60% 50%),
+        buttonSuccess: hsl(150deg 100% 30%),
+
+        // ICONS
+        iconPrimary: #1a1a1a,
+        iconSecondary: #085D87,
+        iconAccent: #DE892A,
+        iconStroke: #00000000,
+        filter: invert(1),
+        switchTheme: "../../assets/cocktail-dress-svgrepo-com.svg",
+
+        // MISC
+        itemBackground: #5252522d,
+        hoverSelected: #5ca6c1,
+        hover: #e4e4e4,
+        descBoxBackground: #193137,
+        containerTitleBackground: #bebebe,
+
+        // SCROLLBAR
+        scrollbarThumb: #085D87,
+        scrollbarHeaderTrack: #5CA6C1,
+        scrollbarTrack: #5CA6C100,
+
+        // FORMS
+        formBodyColor: #1a1a1a,
+        formControlBackground: #a8c5cf,
+        formControlBorder: #085d87,
+        formControlBoxShadow: #2e585e,
+
+        // GRID
+        gridTable: #e4e4e4,
+        gridSelected: #bebebe,
+        gridClicked: #9d4115,
+        gridHeader: #5CA6C1,
+        gridFilter: #387b94,
+        gridInsert: #5ca6c1,
+        gridFont: #1a1a1a,
+        /*gridBorder: #5CA6C1,*/
+        gridBorder: #5ca6c1,
+        gridBorderHeader: #e4e4e4,
+        gridCurrentPage: #de892a,
+
+        // POPUP WINDOW
+        popupWindow_bgColor: #d2d2d2,
+        popupWindow_brdColor: #5ca6c1,
+        popupWindow_titleBgColor: #5ca6c1,
+        popupWindow_titleFontColor: #000000,
+        popupWindow_boxShadow: rgba(0, 0, 0, 0.17),
+
+        // DROPDOWN MENU
+        dropdown_itemHoverBackground: #767676,
+        dropdown_itemHoverColor: #e4e4e4,
+        dropdown_itemActiveBackground: #337acc,
+
+        // NAV & TAB
+        nav_background: #e4e4e4,
+        nav_border: #e4e4e4,
+        tab_background: #e4e4e4,
+        nav_itemColorHover: #e4e4e4,
+    ),
+    // DARK
+    'dark': (
+        // BODY
+        bodyBackground: #142d36,
+        background: #1c3e4a,
+        backgroundShadow: #1c3e4aa1,
+        backgroundHover: #152e37,
+        backgroundActive: #e4e4e4,
+        titleBoxBackground: #1b343c,
+        titleBoxBackgroundDisabled: #c4c4c4,
+        titleBoxColor: #e4e4e4,
+        wrapper: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%),
+
+        // FONTS
+        fontDefault: #e4e4e4,
+        fontPrimary: #95d8f9,
+        fontSecondary: #33C1B1,
+        fontThird: #33C1B1,
+        fontBlue: #61b7d1,
+        fontGreen: #44ffbc,
+        fontDark: #264653,
+        fontPink: #f78ac1,
+        fontLightOrange: #c5b597,
+
+        // BUTTONS
+        buttonFont: #e4e4e4,
+        buttonPrimary: hsl(212deg 60% 50%),
+        buttonSecondary: hsl(212deg 10% 50%),
+        buttonInfo: hsl(199deg 60% 50%),
+        buttonDark: hsl(212deg 10% 20%),
+        buttonLight: #fff,
+        buttonWarning: hsl(35deg 60% 50%),
+        buttonDanger: hsl(0deg 60% 50%),
+        buttonSuccess: hsl(150deg 100% 30%),
+
+        // ICONS
+        iconPrimary: #E4E4E4,
+        iconSecondary: #95D8F9,
+        iconAccent: #DE892A,
+        iconStroke: #00000000,
+        filter: none,
+
+        // MISC
+        itemBackground: #0c0c0cd1,
+        hoverSelected: #009966,
+        hover: #1c3e4a,
+        descBoxBackground: #193137,
+        containerTitleBackground: #193137,
+
+        // SCROLLBAR
+        scrollbarThumb: #95d8f9,
+        scrollbarTrack: #1c3e4a00,
+        scrollbarHeaderTrack: #1c3e4a,
+
+        // FORMS
+        formBodyColor: #f0f8ff,
+        formControlBackground: #142d36,
+        formControlBorder: #10262d,
+        formControlBoxShadow: #2e585e,
+
+        // GRID
+        gridTable: #0d2128,
+        gridSelected: #1c3e4a,
+        gridClicked: #9d4115,
+        gridHeader: #1c3e4a,
+        gridFilter: #0e1f25,
+        gridInsert: #064a37,
+        gridFont: #e4e4e4,
+        /*gridBorder: #1c3e4a,*/
+        gridBorder: #264653,
+        gridBorderHeader: #0d2128,
+        gridCurrentPage: #009966,
+        
+        // POPUP WINDOW
+        popupWindow_bgColor: #0e1f25,
+        popupWindow_brdColor: #0d2128,
+        popupWindow_titleBgColor: #203e4a,
+        popupWindow_titleFontColor: #e9edf2,
+        popupWindow_boxShadow: rgba(0, 0, 0, 0.17),
+
+        // DROPDOWN MENU
+        dropdown_itemHoverBackground: #767676,
+        dropdown_itemHoverColor: #e4e4e4,
+        dropdown_itemActiveBackground: #337acc,
+
+        // NAV & TAB
+        nav_background: #1c3e4a,
+        nav_border: #2a5d6f,
+        tab_background: #1c3e4a,
+        nav_itemColorHover: #1a1a1a,
+
+    ),
+    // DEVA
+    'DevA': (
+        // BODY
+        bodyBackground: #002636,
+        background: #203746,
+        backgroundShadow: #203746a1,
+        backgroundHover: #152e37,
+        backgroundActive: #e4e4e4,
+        titleBoxBackground: #00171e,
+        titleBoxBackgroundDisabled: #c4c4c4,
+        titleBoxColor: #e4e4e4,
+        wrapper: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%),
+
+        // FONTS
+        fontDefault: #e4e4e4,
+        fontPrimary: #60a1c1,
+        fontSecondary: #33C1B1,
+        fontThird: #33C1B1,
+        fontBlue: #61b7d1,
+        fontGreen: #44ffbc,
+        fontDark: #264653,
+        fontPink: #f78ac1,
+        fontLightOrange: #c5b597,
+
+        // BUTTONS
+        buttonFont: #e4e4e4,
+        buttonPrimary: hsl(212deg 60% 40%),
+        buttonSecondary: hsl(212deg 10% 40%),
+        buttonInfo: hsl(199deg 60% 45%),
+        buttonDark: hsl(212deg 10% 30%),
+        buttonLight: hsl(0deg 100% 100%),
+        buttonWarning: hsl(35deg 60% 50%),
+        buttonDanger: hsl(0deg 60% 40%),
+        buttonSuccess: hsl(150deg 100% 30%),
+
+        // ICONS
+        iconPrimary: #c1c1c1,
+        iconSecondary: #545454,
+        iconAccent: #007fa5,
+        iconStroke: #00a6ff7d,
+        filter: none,
+
+        // MISC
+        itemBackground: #00000080,
+        hoverSelected: #009966,
+        hover: #203746,
+        descBoxBackground: #193137,
+        containerTitleBackground: #0f2738,
+
+        // SCROLLBAR
+        scrollbarThumb: #c1c1c1,
+        scrollbarTrack: #00000000,
+
+        // FORMS
+        formBodyColor: #f0f8ff,
+        formControlBackground: #0f2738,
+        formControlBorder: #10262d,
+        formControlBoxShadow: #123c5a,
+
+        // GRID
+        gridTable: #001920,
+        gridSelected: #00000040,
+        gridClicked: #9d4115,
+        gridHeader: #063a4a,
+        gridFilter: #00171e,
+        gridInsert: #064a37,
+        gridFont: #e4e4e4,
+        /*gridBorder: #1c3e4a,*/
+        gridBorder: #063a4a,
+        gridBorderHeader: #0d2128,
+        gridCurrentPage: #009966,
+
+        // POPUP WINDOW
+        popupWindow_bgColor: #063a4a,
+        popupWindow_brdColor: #0d2128,
+        popupWindow_titleBgColor: #00171e,
+        popupWindow_titleFontColor: #e9edf2,
+        popupWindow_boxShadow: rgba(0, 0, 0, 0.17),
+
+        // DROPDOWN MENU
+        dropdown_itemHoverBackground: #767676,
+        dropdown_itemHoverColor: #e4e4e4,
+        dropdown_itemActiveBackground: #337acc,
+
+        // NAV & TAB
+        nav_background: #203746,
+        nav_border: #2a5d6f,
+        tab_background: #203746,
+        nav_itemColorHover: #e4e4e4,
+    )
+);
+
+

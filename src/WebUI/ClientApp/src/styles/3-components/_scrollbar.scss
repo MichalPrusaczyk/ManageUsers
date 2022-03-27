@@ -1,0 +1,48 @@
+﻿@use "sass:color";
+@import "../1-abstracts/_themeGen";
+@import "../1-abstracts/_variables.scss";
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-button, ::-webkit-scrollbar-corner {
+    background: transparent;
+
+    &:vertical {
+        height: 5px;
+    }
+}
+
+
+::-webkit-scrollbar-thumb {
+    @include themeGen() {
+        background-color: getThemeVal('scrollbarThumb');
+        border-radius: $scrollbar-border-radius;
+        border: 2px solid transparent;
+        background-clip: content-box;
+
+        &:hover {
+            background-color: color.adjust(getThemeVal('scrollbarThumb'), $blackness: 25%);
+        }
+    }
+}
+
+.jsgrid-header-scrollbar::-webkit-scrollbar {
+    @include themeGen() {
+        visibility: visible !important;
+        background-color: getThemeVal('scrollbarHeaderTrack') !important;
+    }
+}
+
+::-webkit-scrollbar-track {
+    @include themeGen() {
+        background: getThemeVal('scrollbarTrack');
+        border-radius: 5px;
+    }
+}
+
+.jsgrid-header-scrollbar::-webkit-scrollbar-track {
+    display: none;
+}

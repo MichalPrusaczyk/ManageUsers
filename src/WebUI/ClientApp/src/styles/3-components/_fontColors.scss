@@ -1,0 +1,39 @@
+﻿@import "../1-abstracts/_themeGen";
+
+// *** FONTS ***
+.textBlue:not(.jsgrid-header-cell) {
+    @include themeGen() {
+        color: getThemeVal('fontBlue') !important;
+    }
+}
+
+.textGreen:not(.jsgrid-header-cell) {
+    @include themeGen() {
+        color: getThemeVal('fontGreen') !important;
+    }
+}
+
+.textDark:not(.jsgrid-header-cell) {
+    @include themeGen() {
+        color: getThemeVal('fontDark') !important;
+    }
+}
+
+.textPink:not(.jsgrid-header-cell) {
+    @include themeGen() {
+        color: getThemeVal('fontPink') !important;
+    }
+}
+
+.textLightOrange:not(.jsgrid-header-cell) {
+    @include themeGen() {
+        color: getThemeVal('fontLightOrange') !important;
+    }
+}
+
+.textDefaultBold:not(.jsgrid-header-cell) {
+    @include themeGen() {
+        color: getThemeVal('fontDefault') !important;
+        font-weight: 600;
+    }
+}

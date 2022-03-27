@@ -1,0 +1,196 @@
+@use "sass:color";
+// @import "../styles.scss";
+@import "../1-abstracts/_themeGen";
+@import "../1-abstracts/_variables.scss";
+@import "../1-abstracts/_mixins.scss";
+// @import "../8-icons/_icons.scss";
+
+$threshold: 55%;
+
+
+
+@function contrastColor($color, $dark, $light) {
+    @return if(lightness($color) < $threshold, $light, $dark)
+}
+
+@mixin card($card-width, $card-height, $img-card-height) {
+    @include themeGen() {
+        margin: $margin-m;
+        width: $card-width;
+        height: $card-height;
+        background: getThemeVal('background');
+        border-radius: $card-border-radius;
+        position: relative;
+        box-shadow: 2px 2px 4px getThemeVal('itemBackground');
+        transition: background 0.25s ease-in-out;
+
+        &__img {
+            height: $img-card-height;
+            margin: auto 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: scale(0.7);
+            transition: $transition;
+        }
+
+        &__icon--small {
+            font-size: 30px;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            transition: $transition;
+
+            &:hover {
+                font-size: 35px;
+                transition: $transition;
+            }
+        }
+
+        &__desc {
+            margin-top: $margin-s;
+            color: getThemeVal('fontPrimary');
+            font-size: $h5;
+
+            &--center {
+                text-align: center;
+            }
+        }
+
+        &__header {
+            color: getThemeVal('fontPrimary');
+            font-size: $h1;
+            font-weight: 700;
+        }
+
+        &__list--horizontal {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        &__list--vertical {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        &__item {
+            @include items();
+            /*background: getThemeVal('fontPrimary');*/
+
+            &--active {
+                @include items();
+                background: getThemeVal('backgroundActive');
+                color: contrastColor(getThemeVal('backgroundActive'), #000, #fff);
+                font-weight: bold;
+            }
+        }
+
+        &__title {
+            color: getThemeVal('fontPrimary');
+            font-size: $h2;
+            margin-top: $margin-s;
+        }
+
+        &__message {
+            color: #e4e4e4;
+            width: 100%;
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            user-select: none;
+            font-size: 1rem;
+            overflow-wrap: break-word;
+        }
+
+        &__box__title {
+
+            &--small {
+                color: getThemeVal('fontPrimary');
+                @include boxTitle();
+                position: unset;
+                padding: 5px;
+                font-size: $h7;
+            }
+
+            &--big {
+                color: getThemeVal('fontPrimary');
+                @include boxTitle();
+                font-size: $h6;
+            }
+
+            &--top {
+                color: #e4e4e4;
+                width: 100%;
+                border-radius: 5px 5px 0 0;
+                background: #0000008a;
+                pointer-events: none;
+                padding: 5px;
+                position: absolute;
+                top: 0;
+                text-align: center;
+                text-transform: uppercase;
+                user-select: none;
+                font-size: 1rem;
+            }
+
+            &:hover {
+                pointer-events: none;
+            }
+        }
+
+        &.selected {
+            box-shadow: inset 0px 2px 4px #0c0c0cd1, 2px 2px 4px #0c0c0cd1;
+            background: getThemeVal('hoverSelected');
+            color: getThemeVal('gridFont');
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+@mixin cardHover() {
+    @include themeGen() {
+        &:hover {
+            & a {
+                color: color.adjust(getThemeVal('fontPrimary'), $blackness: 15%);
+            }
+
+            color: color.adjust(getThemeVal('fontPrimary'), $blackness: 15%);
+            background: color.adjust(getThemeVal('background'), $blackness: 2.5%);
+            cursor: pointer;
+        }
+    }
+}
+
+@mixin cardIcon {
+    display: flex;
+    flex-direction: column;
+
+    &__icon {
+        &__container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        &__content {
+            font-size: 30px;
+            transition: $transition;
+        }
+    }
+
+    &:hover &__icon__content {
+        transform: scale(1.25);
+        overflow: hidden;
+    }
+
+    margin: 0.2em !important;
+}
