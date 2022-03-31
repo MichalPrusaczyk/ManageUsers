@@ -50,15 +50,15 @@ $nav-width: 1000px;
 $sidebar-width: $nav-height;
 $sidebar-height: $nav-width;
 
-    // ** MOBILE **
-    $mobile-width-small: 420px;
-    $mobile-width-medium: 640px;
-    $mobile-width-large: 860px;
+// ** MOBILE **
+$mobile-width-small: 420px;
+$mobile-width-medium: 640px;
+$mobile-width-large: 860px;
 
-    $mobile-height-small: 360px;
-    $mobile-height-medium: 680px;
-    $mobile-height-large: 920px;
-    /*$mobile-width-large: 1220px;*/
+$mobile-height-small: 360px;
+$mobile-height-medium: 680px;
+$mobile-height-large: 920px;
+
 
 // *** FORMS ***
 $form-background: #142d36;
@@ -69,15 +69,10 @@ $form-control_container_multiple_items_gap: 0.5rem;
 
 $form-area_gap: 0.5rem;
 
-// *** Edit ***
-$editUser_title-font-size: 1.75rem;
-$editUser_title-margin-bottom: 0.5rem;
-$editUser_container-margin: 2rem;
-$editUser_role_container-margin-bottom: 0.25rem;
-$editUser_role_container-margin-right: 2rem;
-// *** Edit ***
-$support-form_title-font-size: 1.75rem;
-$support-form_title-margin-bottom: 0.5rem;
-$support-form_container-margin: 2rem;
-$support-form_role_container-margin-bottom: 0.25rem;
-$support-form_role_container-margin-right: 2rem;
+
+// *** Form ***
+$form_title-font-size: 1.75rem;
+$form_title-margin-bottom: 0.5rem;
+$form_container-margin: 1rem;
+$form_role_container-margin-bottom: 0.25rem;
+$form_role_container-margin-right: 2rem;

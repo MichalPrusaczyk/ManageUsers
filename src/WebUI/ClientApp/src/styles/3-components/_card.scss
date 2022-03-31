@@ -15,7 +15,6 @@ $threshold: 55%;
 
 @mixin card($card-width, $card-height, $img-card-height) {
     @include themeGen() {
-        margin: $margin-m;
         width: $card-width;
         height: $card-height;
         background: getThemeVal('background');

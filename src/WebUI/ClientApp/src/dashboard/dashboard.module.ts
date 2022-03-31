@@ -13,13 +13,15 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { AngularSvgIconPreloaderModule } from 'angular-svg-icon-preloader';
+import { ReportDefectComponent } from './report-defect/report-defect.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     DashboardComponent,
-    NavMenuComponent
+    NavMenuComponent,
+    ReportDefectComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal'}),

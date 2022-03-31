@@ -70,6 +70,12 @@ nav .nav {
                         background-color: getThemeVal('fontPrimary');
                         color: getThemeVal('nav_itemColorHover') !important;
                     }
+
+                    &__icon {
+                        height: 30px;
+                        width: 30px !important;
+                        background-size: cover;
+                    }
                 }
 
                 &__support {
@@ -119,10 +125,4 @@ nav .nav {
         display: inline;
         white-space: nowrap;
     }
-}
-
-.moduleDescr {
-    /*font-size: 10px;*/
-    /*font-weight: 400;
-    color: #0eeeb9;*/
 }

@@ -17,6 +17,7 @@
         justify-content: $justify-content;
         align-content: center;
         max-width: 100%;
+        gap: 1rem;
 
         &__content {
             display: flex;
@@ -24,6 +25,7 @@
             justify-content: $justify-content;
             align-content: center;
             overflow-x: auto;
+            row-gap: 1rem;
         }
 
         @media screen and (max-width: $mobile-width-medium) {

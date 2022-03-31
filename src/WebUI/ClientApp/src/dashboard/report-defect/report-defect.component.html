@@ -1,0 +1,66 @@
+<div class="report-form__container">
+    <div class="report-form__container__body">
+        <div class="report-form__container__data">
+            <div class="report-form__container__data__title">
+                Enter the problem parameters
+            </div>
+           
+            <div class="report-form__container__data__content">
+
+                <div class="form--control__container">
+                    <div class="form--control__container--title">Your name</div>
+                    <div class="form--control__container--content">
+                        <input type="text" class="form--control" id="name" #name>
+                    </div>
+                </div>
+
+                <div class="form--control__container">
+                    <div class="form--control__container--title">Your surname</div>
+                    <div class="form--control__container--content">
+                        <input type="text" class="form--control" id="surname" #surname>
+                    </div>
+                </div>
+
+                <div class="form--control__container">
+                    <div class="form--control__container--title">Location</div>
+                    <div class="form--control__container--content">
+                        <input type="text" class="form--control" id="location" #location>
+                    </div>
+                </div>
+
+                <div class="form--control__container">
+                    <div class="form--control__container--title">Type</div>
+                    <div class="form--control__container--content">
+                        <input type="text" class="form--control" id="type" value="" #type>
+                    </div>
+                </div>
+            
+            </div>
+
+        </div>
+    
+        <div class="report-form__container__data">
+            <div class="report-form__container__data__title">
+                Enter message
+            </div>
+            <div class="report-form__container__data__content">
+            
+                <div class="form--control__group">
+                    <div class="form--control__group--title">Message</div>
+                    <div class="form--control__group--content">
+                        <textarea id="message" name="message" rows="7" cols="33" #message>Your message</textarea>
+                        <!-- <input type="text" class="form--control" id="message" value="" #message> -->
+                    </div>
+                </div>
+
+                <div class="form--control__group">
+                    <div class="form--control__group--content">
+                        <div type="submit" class="btn btn--success form--control">Send</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- (click)="addTicket($any(ticketId).value , type.value, requester.value, url.value)" -->

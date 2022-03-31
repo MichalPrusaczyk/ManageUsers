@@ -1,0 +1,78 @@
+@import "../../styles/3-components/_container.scss";
+@import "../../styles/1-abstracts/_themeGen.scss";
+@import "../../styles/1-abstracts/_variables.scss";
+
+
+@mixin report-form() {
+    &__title {
+        font-size: $form_title-font-size;
+        margin-bottom: $form_title-margin-bottom;
+    }   
+}
+
+textarea {
+    height: unset !important;
+    margin: 0.15rem 0;
+}
+
+.report-form {
+    &__container {
+        @include container(normal);
+        height: 100%;
+
+        @include themeGen() {
+            &__body {
+                padding: 10px;
+                background: getThemeVal('background');
+                border-radius: $card-border-radius;
+            }
+        }
+
+        &__data {
+            @include report-form();
+            margin: $form_container-margin;
+            
+            &__content {
+                display: flex;
+                flex-direction: column;
+                gap: $form_role_container-margin-bottom;
+            }
+        }
+
+        &__role {
+            max-width: 900px;
+            @include report-form();
+            margin-right: $form_container-margin;
+        }
+
+        &__manage {
+            @include report-form();
+
+            &__content {
+                display: flex;
+                flex-direction: column;
+                gap: $form_role_container-margin-bottom;
+            }
+        }
+    }
+
+    &__roles {
+        &__container {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__role {
+        &__container {
+            margin-right: $form_role_container-margin-right;
+            margin-bottom: $form_role_container-margin-bottom;
+
+            &__title {
+                font-size: $form-control_title-size;
+                margin-bottom: $form_title-margin-bottom;
+            } 
+        }
+    }
+}

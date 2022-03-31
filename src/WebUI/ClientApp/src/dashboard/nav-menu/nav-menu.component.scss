@@ -6,12 +6,19 @@
 //   }
 
 
-.nav__list__element__buttons__item{
+.nav__list__element__buttons__icon{
     
         height: 10px;
         width: 40px !important;
         background-size: cover;
         @include themeGen() {
         background-image: url(getThemeVal('switchTheme')); 
+        transition: background 0.25s ease-in-out;
+        transition-duration: 0.8s;
+        cursor: pointer;
+
+        &:hover{
+            transform: scale(1.2)
+        }
     }
 }
