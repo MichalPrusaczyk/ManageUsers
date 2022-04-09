@@ -225,5 +225,8 @@
       }
     }
   },
-  "defaultProject": "CleanArchitectureWebUI"
+  "defaultProject": "CleanArchitectureWebUI",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

@@ -126,3 +126,32 @@ nav .nav {
         white-space: nowrap;
     }
 }
+
+.log {
+    &-register {
+        @include themeGen() {
+            @include items();
+            display: inline;
+            white-space: nowrap;
+        }
+    }
+
+    &-in{
+        @include themeGen() {
+            @include items();
+            background: getThemeVal('colorSuccess');
+            color: #e4e4e4 !important;
+            display: inline;
+            white-space: nowrap;
+        }
+    }
+    &-out{
+        @include themeGen() {
+            @include items();
+            background: getThemeVal('colorDanger');
+            color: #e4e4e4 !important;
+            display: inline;
+            white-space: nowrap;
+        }
+    }
+}

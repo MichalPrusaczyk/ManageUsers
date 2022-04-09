@@ -1,0 +1,18 @@
+// @import "../1-abstracts/_mixins.scss";
+// @import "../1-abstracts/_themeGen.scss";
+// @import "../1-abstracts/_variables.scss";
+
+// .angular-editor {
+//     &-toolbar {
+//         @include themeGen {
+//             border-radius: $card-border-radius;
+//             align-content: center;
+//         }
+//     }
+
+//     &-button {
+//         @include themeGen {
+//             @include buttons(getThemeVal('colorLight'))
+//         }
+//     }
+// }

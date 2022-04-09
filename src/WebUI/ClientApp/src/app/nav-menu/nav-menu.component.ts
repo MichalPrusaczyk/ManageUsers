@@ -1,25 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit, ViewEncapsulation } from '@angular/core';
 
+const body = document.body.classList;
+const themeLight = 'theme-light';
+const themeDark = 'theme-dark';
 @Component({
   selector: 'app-nav-menu',
   templateUrl: './nav-menu.component.html',
-  styleUrls: ['./nav-menu.component.scss']
+  styleUrls: ['./nav-menu.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class NavMenuComponent implements OnInit {
-  isExpanded = false;
 
-  isProduction: boolean = false;
-
-  ngOnInit() : void {
-    this.isProduction = environment.production;
+    // currentTheme: Theme = 'theme-light';
+    constructor(@Inject(DOCUMENT) private document: Document) {
+      body.add(themeLight);
+    }
+  
+    switchTheme() {
+      body.contains(themeLight) ? body.replace(themeLight, themeDark) : body.replace(themeDark, themeLight);
+    }
+  
+  ngOnInit(): void {
   }
 
-  collapse() {
-    this.isExpanded = false;
-  }
-
-  toggle() {
-    this.isExpanded = !this.isExpanded;
-  }
 }

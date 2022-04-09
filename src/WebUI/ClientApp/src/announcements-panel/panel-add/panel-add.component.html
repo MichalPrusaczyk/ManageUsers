@@ -1,0 +1,32 @@
+<div class="panel-add__container__data__content">
+    <div class="form-area">
+    
+        <div class="form--control__container">
+            <div class="form--control__container--title">Title</div>
+            <div class="form--control__container--content">
+                <input #announcementTitle type="text" class="form--control" />
+            </div>
+        </div> 
+    
+        <div class="form--control__container">
+            <div class="form--control__container--title">Category</div>
+            <div class="form--control__container--content">
+                <input #announcementCategory type="text" class="form--control" />
+            </div>
+        </div> 
+
+        <div class="form--control__textarea">
+        <label class="form--control__container--title">Message</label> 
+            <div class="form--control__container--content">
+            <angular-editor  #announcementMessage  [placeholder]="'Enter text here...'" [config]="editorConfig"></angular-editor>
+            </div>
+        </div>
+
+        <div class="form--control__container">
+            <div class="form--control__container--content">
+            <button class="btn btn--success" (click)="sendAnnouncement();">Post</button>
+            </div>
+        </div>
+    </div>
+</div>
+  

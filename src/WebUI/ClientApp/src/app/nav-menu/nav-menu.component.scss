@@ -1,18 +1,24 @@
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
+@import '../../styles/styles.scss';
+@import "../../styles/1-abstracts/_themeGen";
+@import '../../styles/4-layouts/navbar.scss';
+// :root {
+//     --url: url('../../assets/'+getThemeVal('switchTheme'));
+//   }
 
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+.nav__list__element__buttons__icon{
+    
+        height: 10px;
+        width: 40px !important;
+        background-size: cover;
+        @include themeGen() {
+        background-image: url(getThemeVal('switchTheme')); 
+        transition: background 0.25s ease-in-out;
+        transition-duration: 0.8s;
+        cursor: pointer;
+
+        &:hover{
+            transform: scale(1.2)
+        }
+    }
 }

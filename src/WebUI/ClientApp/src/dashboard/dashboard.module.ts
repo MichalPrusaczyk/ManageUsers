@@ -9,7 +9,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ModalModule } from 'ngx-bootstrap';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { AngularSvgIconPreloaderModule } from 'angular-svg-icon-preloader';
@@ -20,7 +19,6 @@ import { ReportDefectComponent } from './report-defect/report-defect.component';
   declarations: [
     HomeComponent,
     DashboardComponent,
-    NavMenuComponent,
     ReportDefectComponent
   ],
   imports: [
@@ -39,6 +37,6 @@ import { ReportDefectComponent } from './report-defect/report-defect.component';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true },
   ],
-  bootstrap: [DashboardComponent, NavMenuComponent]
+  bootstrap: [DashboardComponent]
 })
 export class DashboardModule { }

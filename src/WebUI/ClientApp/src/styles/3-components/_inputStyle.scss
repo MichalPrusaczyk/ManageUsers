@@ -54,6 +54,29 @@
     }
 }
 
+@mixin listStyle() {
+    @include inputStyle();
+    position: fixed;
+    list-style: none;
+    height: auto !important;
+    width: auto !important;
+    max-height: 300px;
+    overflow: auto;
+    background-clip: unset;
+    padding: 0;
+
+    li {
+        padding: 0 3rem;
+        border-radius: $card-border-radius;
+
+        &:hover {
+            @include themeGen() {
+                background: getThemeVal('itemBackground');
+            }
+        }
+    }
+}
+
 @mixin overrideAutofill {
     &:-webkit-autofill,
     &:-webkit-autofill:focus {

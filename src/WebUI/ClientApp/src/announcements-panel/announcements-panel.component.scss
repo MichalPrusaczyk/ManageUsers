@@ -1,0 +1,48 @@
+@import "../styles/1-abstracts/_calculations.scss";
+@import "../styles/3-components/_card.scss";
+@import "../styles/3-components/_container.scss";
+@import "../styles/4-layouts/_grid.scss";
+@import "../styles/8-icons/icons";
+// @import "../images/Icons.svg#iLMobileMenu";
+
+.announcement-panel {
+
+    &__container {
+        @include container(flex-start);
+        height: 100%;
+        width: 100%;
+
+        &__body {
+            height: auto !important;
+        }
+    }
+}
+
+.cards {
+    &__container {
+        @include container(flex-start);
+    }
+
+    &__card {
+        @include card(100px,unset,0);
+        // @include cardHover();
+        // @include cardIcon();
+        &__icon {
+            @include icon(100px, 100px, 0.8);
+        }
+
+        &:hover &__icon__container {
+            transform: scale(1);
+            overflow: hidden;
+        }
+    }
+}
+
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+}

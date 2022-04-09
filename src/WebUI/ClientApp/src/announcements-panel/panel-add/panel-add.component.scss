@@ -1,0 +1,66 @@
+@import "../../styles/3-components/_container.scss";
+@import "../../styles/3-components/_inputStyle.scss";
+@import "../../styles/1-abstracts/_themeGen.scss";
+@import "../../styles/1-abstracts/_variables.scss";
+@import "../../styles/1-abstracts/_mixins.scss";
+
+
+.angular-editor {
+    &-toolbar {
+        @include themeGen {
+            border-radius: $card-border-radius;
+            align-content: center;
+        }
+    }
+
+    &-button {
+        @include themeGen {
+            @include buttons(#fff)
+        }
+    }
+
+    &-textarea{
+        @include themeGen {
+            background:(getThemeVal('formControlBackground')) !important;
+            border: 1px solid (getThemeVal('formControlBorder')) !important;
+        }
+    }
+}
+
+.angular-editor-toolbar-set input{
+    display: none !important;
+  }
+  
+  #search-box:focus + .search-result,
+  .search-result:hover {
+    display: block !important;
+  }
+  
+  .panel-add {
+      &__container {
+          @include container(normal);
+          height: 100%;
+  
+          @include themeGen() {
+              &__body {
+                  padding: 10px;
+                  background: getThemeVal('background');
+                  border-radius: $card-border-radius;
+              }
+          }
+      }
+  }
+  
+  .form--control__textarea {
+      width: 100%;
+  }
+  
+  .angular-editor-textarea{
+      @include inputStyle();
+  }
+  
+  .search-result {
+      @include listStyle();
+      display: none !important;
+  }
+  

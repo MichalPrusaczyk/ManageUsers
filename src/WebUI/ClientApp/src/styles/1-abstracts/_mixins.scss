@@ -1,5 +1,8 @@
+@use "sass:color";
 @import "./_variables.scss";
 @import "_themeGen";
+@import "_functions.scss";
+
 // *** CARDS ***
 
 @mixin boxTitle() {
@@ -22,10 +25,66 @@
     background-color: getThemeVal('itemBackground');
     border-radius: 5px;
     padding: $item-padding;
-    color: getThemeVal('fontPrimary');
+    color: getThemeVal('fontPrimary') !important;
     margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 36px;
+}
+
+
+$threshold: 55%;
+$transitionTime: .15s;
+
+@mixin buttons($colorName) {
+    background: $colorName !important;
+    height: 35px;
+    color: contrastColor($colorName, #000, #fff) !important;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: transparent;
+    padding: 0.375rem 0.75rem;
+    /*font-size: $h5;*/
+    text-transform: uppercase;
+    line-height: 1.5;
+    transition: color $transitionTime ease-in-out, background-color $transitionTime ease-in-out, border-color $transitionTime ease-in-out, box-shadow $transitionTime ease-in-out;
+    border-radius: $button-border-radius;
+    outline: none;
+    text-shadow: none !important;
+
+    &:not(:disabled):not(.disabled) {
+        &:hover, &.active {
+            @if ($colorName == getThemeVal('buttonDanger')) {
+                background: color.adjust($colorName, $lightness: -25%) !important;
+            }
+            @else {
+                background: color.adjust($colorName, $blackness: 35%) !important;
+            }
+
+            box-shadow: inset 0 0 2px color.adjust($colorName, $blackness: 45%), 0px 0 2px 1px color.adjust($colorName, $blackness: 45%);
+        }
+    }
+
+    &:not(:disabled):not(.disabled) {
+        &:focus, &.focus {
+            box-shadow: inset 0 0 2px color.adjust($colorName, $blackness: 45%), 0 0 2px 1px color.adjust($colorName, $blackness: 45%);
+        }
+    }
+
+    &.disabled, &:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+        background: color.adjust($colorName, $blackness: 25%);
+    }
+
+    &:not(:disabled):not(.disabled) {
+        cursor: pointer;
+    }
 }
