@@ -1,18 +1,58 @@
-// @import "../1-abstracts/_mixins.scss";
-// @import "../1-abstracts/_themeGen.scss";
-// @import "../1-abstracts/_variables.scss";
+@use "sass:color";
+@import "../1-abstracts/_themeGen.scss";
+@import "../1-abstracts/_variables.scss";
+@import "../1-abstracts/_mixins.scss";
+@import "../8-icons/_icons.scss";
 
-// .angular-editor {
-//     &-toolbar {
-//         @include themeGen {
-//             border-radius: $card-border-radius;
-//             align-content: center;
-//         }
-//     }
+$threshold: 55%;
 
-//     &-button {
-//         @include themeGen {
-//             @include buttons(getThemeVal('colorLight'))
-//         }
-//     }
-// }
+@function contrastColor($color) {
+    @return if(lightness($color) < $threshold, #e4e4e4, #000)
+}
+
+@mixin messageBox($card-width, $card-height) {
+    @include themeGen() {
+        /*margin: $margin-m;*/
+        display: flex;
+        flex-direction: column;
+        width: $card-width;
+        height: $card-height;
+        background: getThemeVal('background');
+        border-radius: $card-border-radius;
+        color: contrastColor(getThemeVal('background'));
+        box-shadow: 2px 2px 4px getThemeVal('itemBackground');
+        transition: background 0.25s ease-in-out;
+
+        &--title {
+            display: flex;
+            justify-content: space-between;
+            border-radius: $card-border-radius $card-border-radius 0 0;
+            background: #00000066;
+            padding: 0.5rem;
+            font-size: 1.618rem;
+
+            &--date {
+                font-size: 1rem;
+            }
+        }
+
+        &--content {
+            height: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            overflow-wrap: break-word;
+        }
+
+        &--advertiser {
+            text-align: right;
+            padding: 0.5rem;
+            font-size: 1rem;
+            font-style: italic;
+        }
+    }
+}
+
+@mixin messageBoxColor($bg-color) {
+    background-color: darken($bg-color, 10%);
+    color: contrastColor($bg-color);
+}

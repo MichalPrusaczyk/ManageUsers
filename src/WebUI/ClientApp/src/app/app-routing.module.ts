@@ -13,6 +13,7 @@ export const routes: Routes = [
  
   { path: '', component: DashboardMessagesComponent, pathMatch: 'full' },
   { path: 'token', component: TokenComponent, canActivate: [AuthorizeGuard] },
+  { path: 'todo', component: TodoComponent, canActivate: [AuthorizeGuard] },
   { path: 'panel', component: AnnouncementsPanelComponent, canActivate: [AuthorizeGuard],
     children: [
       { path: 'add', component: PanelAddComponent},

@@ -1,1 +1,10 @@
-<p>dashboard-messages works!</p>
+<div class="announcement__container">
+    <div *ngFor="let announcement of announcements">
+        <div class="announcement__messageBox {{announcement.AnnouncementsTypeString}}">
+            <div class="announcement__messageBox--title">{{announcement.Title}} 
+                <span class="announcement__messageBox--title--date">{{announcement.StartDate | date:"d MMM hh:mm:ss"}} - {{announcement.EndDate | date:"d MMM hh:mm:ss"}}</span></div>
+            <div class="announcement__messageBox--content" [innerHTML]="announcement.Message"></div>
+            <div class="announcement__messageBox--advertiser"><span>{{announcement.ModifiedBy}}</span></div>
+        </div>
+    </div>
+</div>

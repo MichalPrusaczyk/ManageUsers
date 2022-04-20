@@ -1,0 +1,51 @@
+@import "../../styles/1-abstracts/_themeGen.scss";
+@import "../../styles/3-components/_messageBox.scss";
+
+.announcement {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        pointer-events: none;
+        align-items: center;    
+        flex-wrap: wrap;
+    }
+
+    &__messageBox {
+        @include messageBox(70vw, auto);
+
+        // @include themeGen(){
+        //     &.success {
+        //         @include messageBoxColor(getThemeVal('colorSuccess'));
+        //     }
+        //     &.danger {
+        //         @include messageBoxColor(getThemeVal('colorDanger'));
+        //     }
+        //     &.warning {
+        //         @include messageBoxColor(getThemeVal('colorWarning'));
+        //     }
+        //     &.info {
+        //         @include messageBoxColor(getThemeVal('colorInfo'));
+        //     }
+        //     &.primary {
+        //         @include messageBoxColor(getThemeVal('colorPrimary'));
+        //     }
+        //     &.secondary {
+        //         @include messageBoxColor(getThemeVal('colorSecondary'));
+        //     }
+        //     &.light {
+        //         @include messageBoxColor(getThemeVal('colorLight'));
+        //     }
+        //     &.dark {
+        //         @include messageBoxColor(getThemeVal('colorDark'));
+        //     }
+        // }
+    }
+}
+
+.announcement__messageBox--content img {
+    max-width: 100%;
+}
+
+

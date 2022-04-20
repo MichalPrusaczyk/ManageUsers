@@ -10,7 +10,7 @@ declare var Alert: any;
 })
 export class AnnouncementService {
 
-  private baseUrl = `${window.location.origin}/api/announcements`;
+  private baseUrl = `${window.location.origin}/api`;
   private announcemntsData: AnnouncementModel[] = [];
   private announcementsCategory: AnnouncementCategory[] = [];
 
@@ -19,7 +19,7 @@ export class AnnouncementService {
   ) { }
 
   getAnnouncements() {
-    return this.http.get<AnnouncementModel[]>(`${this.baseUrl}/getAnnouncement_GetCurrent`);
+    return this.http.get<AnnouncementModel[]>(`${this.baseUrl}/GetAnnouncements`);
   }
 
   getAnnouncementsCategory(): Observable<AnnouncementCategory[]>{
@@ -27,14 +27,14 @@ export class AnnouncementService {
   }
 
   getDataForDashboard(): void {
-    this.http.get<AnnouncementCategory[]>(`${this.baseUrl}/Announcement_GetTypes`).subscribe({
+    this.http.get<AnnouncementCategory[]>(`${this.baseUrl}/GetTypes`).subscribe({
       next: (data) => { this.announcementsCategory = data; },
       error: (err) => { console.log(err); }
     });
   }
 
   sendAnnouncement(title: string, category: number, createDate: Date, message: string){
-    this.http.post(`${this.baseUrl}/Announcement_Add`, {
+    this.http.post(`${this.baseUrl}/announcement`, {
       Title: title,
       AnnouncementCategory: category,
       CreateDate: createDate,
