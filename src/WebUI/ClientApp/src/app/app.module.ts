@@ -16,6 +16,8 @@ import { TokenComponent } from './token/token.component';
 import { AnnouncementsPanelComponent } from 'src/announcements-panel/announcements-panel.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { AnnouncementsModule } from 'src/announcements/announcements.module';
+import { CommonModule } from '@angular/common';
+import { DashboardMessagesComponent } from 'src/announcements-dashboard/dashboard-messages/dashboard-messages.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,14 @@ import { AnnouncementsModule } from 'src/announcements/announcements.module';
     TokenComponent,
     AnnouncementsPanelComponent,
     NavMenuComponent,
+    TodoComponent,
+    
     
   ],
   imports: [
     AnnouncementsModule,
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    CommonModule,
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,

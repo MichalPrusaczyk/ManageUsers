@@ -29,6 +29,7 @@ body {
             //@media screen and (max-width: $mobile-width-medium) {
             //height: auto !important;
             //}
+            padding: 15px;
             overflow: auto;
             height: 100%;
             //display: flex;
@@ -36,4 +37,15 @@ body {
             //overflow-x: auto;
         }
     }
+}
+
+#wrapper {
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    bottom: 0;
+    padding-left: 70px;
+    padding-bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
 }

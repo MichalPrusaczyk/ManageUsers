@@ -20,7 +20,6 @@ public class AnnouncementController : ApiControllerBase
         return await Mediator.Send(request);
     }
 
-
     [HttpPost]
     public async Task<ActionResult<int>> Create(CreateAnnouncementCommand command)
     {

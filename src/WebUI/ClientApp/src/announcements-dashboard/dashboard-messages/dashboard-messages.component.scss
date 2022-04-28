@@ -1,15 +1,17 @@
 @import "../../styles/1-abstracts/_themeGen.scss";
 @import "../../styles/3-components/_messageBox.scss";
 
-.announcement {
+.dm {
     &__container {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        height: 100%;
         width: 100%;
         gap: 1rem;
         pointer-events: none;
-        align-items: center;    
+        align-items: center;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     &__messageBox {
@@ -44,7 +46,7 @@
     }
 }
 
-.announcement__messageBox--content img {
+.dm__messageBox--content img {
     max-width: 100%;
 }
 

@@ -1,4 +1,4 @@
-<header>
+
     <nav class="nav">
         <div class="nav__list">
             <div class="nav__list__element__logo">
@@ -9,7 +9,7 @@
             </div>
 
             <div class="nav__list__element__buttons__title">
-                <span class="currentPageName"></span>
+                <span class="currentPageName" routerLink="">PAGE NAME</span>
                 <span class="moduleDescr"></span>
             </div>
 
@@ -17,12 +17,14 @@
                 <div class="nav__list__element__buttons__icon" (click)="switchTheme()"></div>
             </div>
 
+            <div class="nav__list__element__buttons">
+                <div class="" routerLink="panel/add">panel</div>
+            </div>
+
+
             <div class="nav__list__element__buttons__title">
-                
                 <app-login-menu></app-login-menu>
-                
             </div>
             
         </div>
     </nav>
-</header>

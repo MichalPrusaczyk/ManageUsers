@@ -6,7 +6,7 @@ import { AuthorizeService } from 'src/api-authorization/authorize.service';
   selector: 'app-announcements-panel',
   templateUrl: './announcements-panel.component.html',
   styleUrls: ['./announcements-panel.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  //encapsulation: ViewEncapsulation.None
 })
 export class AnnouncementsPanelComponent implements OnInit {
   token: string;

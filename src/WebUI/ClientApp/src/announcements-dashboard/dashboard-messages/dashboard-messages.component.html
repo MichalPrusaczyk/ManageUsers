@@ -1,10 +1,12 @@
-<div class="announcement__container">
-    <div *ngFor="let announcement of announcements">
-        <div class="announcement__messageBox {{announcement.AnnouncementsTypeString}}">
-            <div class="announcement__messageBox--title">{{announcement.Title}} 
-                <span class="announcement__messageBox--title--date">{{announcement.StartDate | date:"d MMM hh:mm:ss"}} - {{announcement.EndDate | date:"d MMM hh:mm:ss"}}</span></div>
-            <div class="announcement__messageBox--content" [innerHTML]="announcement.Message"></div>
-            <div class="announcement__messageBox--advertiser"><span>{{announcement.ModifiedBy}}</span></div>
+<div class="dm__container">
+    <div *ngFor="let announcement of announcements" class="dm__messageBox {{announcement.announcementsTypeString}}">
+        <div class="dm__messageBox--title">{{announcement.title}} 
+            <span class="dm__messageBox--title--date">{{announcement.createDate | date:"d MMM hh:mm:ss"}}</span></div>
+        <div class="dm__messageBox--content">
+            <read-more [text]="announcement.message" [maxLength]="300"></read-more>
         </div>
+        <div class="dm__messageBox--advertiser"><span>{{announcement.modifiedBy}}</span></div>
     </div>
 </div>
+
+

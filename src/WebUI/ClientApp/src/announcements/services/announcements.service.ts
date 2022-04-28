@@ -19,7 +19,7 @@ export class AnnouncementService {
   ) { }
 
   getAnnouncements() {
-    return this.http.get<AnnouncementModel[]>(`${this.baseUrl}/GetAnnouncements`);
+    return this.http.get<AnnouncementModel[]>(`${this.baseUrl}/Announcement`);
   }
 
   getAnnouncementsCategory(): Observable<AnnouncementCategory[]>{

@@ -15,7 +15,9 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 @NgModule({
   declarations: [
     AnnouncementsDashboardComponent,
-    DashboardMessagesComponent
+    
+    
+    
   ],
   imports: [
     CommonModule,

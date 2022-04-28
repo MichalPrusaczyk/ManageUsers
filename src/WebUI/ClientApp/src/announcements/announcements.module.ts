@@ -10,12 +10,18 @@ import { ModalModule } from 'ngx-bootstrap';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { AnnouncementsComponent } from './announcements.component';
 import { PanelAddComponent } from 'src/announcements-panel/panel-add/panel-add.component';
+import { DashboardMessagesComponent } from 'src/announcements-dashboard/dashboard-messages/dashboard-messages.component';
+import { ReadMoreComponent } from 'src/announcements-dashboard/dashboard-messages/read-more/read-more.component';
+
 
 
 @NgModule({
   declarations: [
     AnnouncementsComponent,
-    PanelAddComponent
+    PanelAddComponent,
+    DashboardMessagesComponent,
+    ReadMoreComponent
+    
     
   ],
   imports: [
